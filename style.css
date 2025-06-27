@@ -28,6 +28,14 @@ p {
   color: #bbb;
 }
 
+h2 {
+  font-size: clamp(1rem, 4vw, 2rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+
 ul.links {
   list-style: none;
   padding: 0;
