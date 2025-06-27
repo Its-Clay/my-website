@@ -52,46 +52,49 @@ ul.links a:hover {
 ul.socials {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
+  align-items: flex-start;
+  gap: 0.5rem;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 2rem auto;
+  max-width: 300px;
 }
 
 ul.socials li a {
   display: inline-block;
-  padding: 0.5rem 1.25rem;
-  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.95rem;
   text-decoration: none;
   color: #111;
   background-color: #f4f4f4;
-  border-radius: 999px;
+  border-radius: 6px; /* More rectangular than pill */
   transition: background-color 0.2s ease, transform 0.1s ease;
   font-weight: 500;
+  line-height: 1.2;
 }
 
 ul.socials li a:hover {
-  background-color: #ccc;
-  transform: scale(1.03);
+  background-color: #ddd;
+  transform: translateY(-1px);
 }
 
+
 .email {
-  background-color: #ffb703; /* yellow-orange */
+  background-color: #ffdd57;
   color: #111;
 }
 
 .github {
-  background-color: #333;
-  color: #f4f4f4;
+  background-color: #e6e6e6;
+  color: #111;
 }
 
 .linkedin {
-  background-color: #0077b5;
-  color: #fff;
+  background-color: #a6c5e2;
+  color: #111;
 }
 
 .resume {
-  background-color: #6a4c93;
-  color: #fff;
+  background-color: #dabfff;
+  color: #111;
 }
