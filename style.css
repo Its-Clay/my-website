@@ -63,12 +63,13 @@ ul.links a:hover {
 
 ul.socials {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.75rem;
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 500px;
+  text-align: center;
 }
 
 ul.socials li a {
