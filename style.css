@@ -75,17 +75,24 @@ ul.links a:hover {
 
 ul.socials {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 0.5rem;
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 500px;
-  justify-items: center;
+  max-width: 400px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+ul.socials li {
+  width: 100%;
 }
 
 ul.socials li a {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.35rem 0.6rem;
   font-size: 0.75rem;
   font-weight: 500;
@@ -93,6 +100,9 @@ ul.socials li a {
   border-radius: 4px;
   transition: background-color 0.2s ease, transform 0.1s ease;
   color: #111;
+  height: 100%;              /* makes all buttons the same height */
+  width: 100%;               /* fills each grid cell */
+  text-align: center;
 }
 
 ul.socials li a:hover {
