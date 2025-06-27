@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background-color: #fff;
-  color: #111;
+  background-color: #111;
+  color: #f4f4f4;
   line-height: 1.6;
   padding: 2rem;
 }
@@ -15,14 +15,17 @@ main {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 8vw, 3rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom: 0.5rem;
 }
 
 p {
   font-size: 1.125rem;
   margin-bottom: 2rem;
-  color: #444;
+  color: #bbb;
 }
 
 ul.links {
@@ -37,11 +40,11 @@ ul.links li {
 
 ul.links a {
   text-decoration: none;
-  color: #0070f3;
-  border-bottom: 1px solid #0070f3;
+  color: #f4f4f4;
+  border-bottom: 1px solid #555;
   transition: border-color 0.2s;
 }
 
 ul.links a:hover {
-  border-color: #111;
+  border-color: #f4f4f4;
 }
