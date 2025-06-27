@@ -48,3 +48,50 @@ ul.links a {
 ul.links a:hover {
   border-color: #f4f4f4;
 }
+
+ul.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.socials li a {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #111;
+  background-color: #f4f4f4;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-weight: 500;
+}
+
+ul.socials li a:hover {
+  background-color: #ccc;
+  transform: scale(1.03);
+}
+
+.email {
+  background-color: #ffb703; /* yellow-orange */
+  color: #111;
+}
+
+.github {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+.linkedin {
+  background-color: #0077b5;
+  color: #fff;
+}
+
+.resume {
+  background-color: #6a4c93;
+  color: #fff;
+}
