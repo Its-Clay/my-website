@@ -1,3 +1,63 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #111;
+  color: #f4f4f4;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 5vh;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: #bbb;
+}
+
+h2 {
+  font-size: clamp(1rem, 4vw, 2rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+
+ul.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.links li {
+  margin: 0.5rem 0;
+}
+
+ul.links a {
+  text-decoration: none;
+  color: #f4f4f4;
+  border-bottom: 1px solid #555;
+  transition: border-color 0.2s;
+}
+
+ul.links a:hover {
+  border-color: #f4f4f4;
+}
+
+/* Social section improvements */
 .social-section {
   margin-top: 2rem;
   text-align: center;
@@ -40,7 +100,7 @@ ul.socials li a:hover {
   filter: brightness(0.95);
 }
 
-/* Platform-specific colors */
+/* Platform-specific colors (updated to accurate, softer tones) */
 .email {
   background-color: #f4f4f4;
   color: #111;
