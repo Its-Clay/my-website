@@ -122,18 +122,18 @@ ul.socials li a:hover {
 }
 
 .linkedin {
-  background-color: #cce6f9;
-  color: #0a66c2;
+  background-color: #c2e0f6;  /* bright, soft LinkedIn blue */
+  color: #111;
 }
 
 .instagram {
-  background-color: #fce5f1;
-  color: #d6249f;
+  background-color: #e8d4c3;
+  color: #111;
 }
 
 .youtube {
-  background-color: #fdd;
-  color: #cc0000;
+  background-color: #f8bcbc;
+  color: #111;
 }
 
 .workouts {
