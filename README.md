@@ -1,8 +1,3 @@
-diff --git a/README.md b/README.md
-index bae2dbe6a1bc12e805d8ce31bde055df48c3846a..7065e1f410acb80ccc12c1518928135dda8f4986 100644
---- a/README.md
-+++ b/README.md
-@@ -1,2 +1,17 @@
  # my-website
 -Website code to be hosted on itsClay.net
 +
