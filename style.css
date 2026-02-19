@@ -1,8 +1,4 @@
-diff --git a/style.css b/style.css
-index ba533fe001021d95c47fd4d5d50a39074518588f..336fdbff5990c4c4b7e07545538be4d7097d7fd9 100644
---- a/style.css
-+++ b/style.css
-@@ -14,129 +14,228 @@ main {
+main {
    padding-top: 5vh;
  }
  
