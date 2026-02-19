@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to itsclay.net</title>
+  <meta name="description" content="A quick introduction to what this site is and where it’s going." />
+
+  <!-- Fonts (optional but adds polish) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0f1115;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --faint: rgba(255,255,255,0.5);
+      --line: rgba(255,255,255,0.12);
+      --accent: #9ac6f7;
+      --accent2: #b9f2d6;
+      --shadow: 0 20px 60px rgba(0,0,0,0.55);
+      --radius: 18px;
+      --max: 860px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(154,198,247,0.20), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(185,242,214,0.14), transparent 55%),
+                  radial-gradient(900px 700px at 40% 120%, rgba(154,198,247,0.12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 42px 18px;
+    }
+
+    a{ color: var(--text); text-decoration: none; }
+    a:hover{ text-decoration: underline; text-decoration-color: rgba(154,198,247,0.65); text-underline-offset: 4px; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    /* Top nav */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .crumb{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .crumb a{
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+    }
+    .crumb a:hover{
+      color: var(--text);
+      border-bottom-color: rgba(255,255,255,0.22);
+      text-decoration:none;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 0.9rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    /* Hero */
+    .hero{
+      position: relative;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(900px 480px at 10% 0%, rgba(154,198,247,0.22), transparent 60%),
+        radial-gradient(700px 380px at 90% 20%, rgba(185,242,214,0.18), transparent 65%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-inner{
+      padding: 34px 26px 26px;
+    }
+
+    .kicker{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(154,198,247,0.12);
+      flex: 0 0 auto;
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-family: Fraunces, ui-serif, Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      font-size: clamp(2.0rem, 3.7vw, 3.0rem);
+    }
+
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 62ch;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px 12px;
+      margin-top: 18px;
+      color: var(--faint);
+      font-size: 0.92rem;
+    }
+
+    .meta span{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      padding: 7px 10px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 999px;
+      background: rgba(0,0,0,0.18);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Optional animated accent line (progressive enhancement) */
+    .sheen{
+      position:absolute;
+      inset:-40% -40%;
+      background:
+        linear-gradient(120deg,
+          transparent 35%,
+          rgba(255,255,255,0.10) 45%,
+          rgba(154,198,247,0.14) 50%,
+          rgba(255,255,255,0.10) 55%,
+          transparent 65%);
+      transform: translateX(-40%) rotate(8deg);
+      pointer-events:none;
+      opacity: 0;
+    }
+
+    @media (prefers-reduced-motion: no-preference){
+      .sheen{
+        opacity: 1;
+        animation: sheen 6.5s ease-in-out infinite;
+      }
+      @keyframes sheen{
+        0%   { transform: translateX(-55%) rotate(8deg); }
+        45%  { transform: translateX(35%) rotate(8deg); }
+        100% { transform: translateX(35%) rotate(8deg); }
+      }
+    }
+
+    /* Article content */
+    article{
+      margin-top: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 16px 44px rgba(0,0,0,0.35);
+      overflow:hidden;
+    }
+
+    .content{
+      padding: 26px;
+    }
+
+    .content p{
+      margin: 0 0 1.1rem;
+      color: var(--text);
+      font-size: 1.02rem;
+    }
+
+    .content p.lede{
+      font-size: 1.12rem;
+      color: rgba(255,255,255,0.86);
+    }
+
+    .content h2{
+      margin: 1.6rem 0 0.7rem;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.92);
+      text-transform: uppercase;
+    }
+
+    .callout{
+      margin: 1.4rem 0;
+      padding: 14px 14px 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(154,198,247,0.22);
+      background: radial-gradient(700px 260px at 20% 0%, rgba(154,198,247,0.14), transparent 55%),
+                  rgba(0,0,0,0.18);
+      color: rgba(255,255,255,0.86);
+    }
+
+    .callout strong{
+      color: rgba(255,255,255,0.95);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    .card{
+      grid-column: span 12;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (min-width: 780px){
+      .card{ grid-column: span 6; }
+    }
+
+    figure{
+      margin: 1.2rem 0;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.20);
+    }
+
+    .img-placeholder{
+      aspect-ratio: 16 / 9;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      color: rgba(255,255,255,0.62);
+      background:
+        radial-gradient(700px 260px at 20% 10%, rgba(154,198,247,0.20), transparent 55%),
+        radial-gradient(700px 260px at 80% 30%, rgba(185,242,214,0.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    }
+
+    figcaption{
+      padding: 10px 12px 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      align-items:center;
+      justify-content:space-between;
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding: 16px 6px 0;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.9);
+      cursor:pointer;
+      transition: transform 0.12s ease, border-color 0.2s ease, background-color 0.2s ease;
+      text-decoration:none;
+    }
+
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(154,198,247,0.45);
+      background: rgba(255,255,255,0.07);
+      text-decoration:none;
+    }
+
+    .btn.primary{
+      border-color: rgba(154,198,247,0.55);
+      background: linear-gradient(135deg, rgba(154,198,247,0.18), rgba(185,242,214,0.10));
+    }
+
+    /* Tiny entrance animation */
+    .reveal{ opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: no-preference){
+      .reveal{
+        opacity: 0;
+        transform: translateY(10px);
+        animation: rise 520ms ease forwards;
+      }
+      .reveal.delay-1{ animation-delay: 90ms; }
+      .reveal.delay-2{ animation-delay: 160ms; }
+      @keyframes rise{
+        to{ opacity: 1; transform: translateY(0); }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="crumb">
+        <a href="../index.html" aria-label="Back to home">← Home</a>
+        <span aria-hidden="true">/</span>
+        <span>Article</span>
+      </div>
+
+      <div class="pill" title="A living notebook">
+        <span aria-hidden="true">✦</span>
+        <span>itsclay.net</span>
+      </div>
+    </div>
+
+    <header class="hero reveal">
+      <div class="sheen" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="kicker"><span class="dot" aria-hidden="true"></span>WELCOME</div>
+        <h1>Welcome to itsclay.net</h1>
+        <p class="subtitle">
+          A calm corner of the internet where I document projects, experiments, and the occasional
+          “how did I end up here?” rabbit hole.
+        </p>
+
+        <div class="meta">
+          <span>Feb 19, 2026</span>
+          <span>~3 minute read</span>
+          <span>Notes · Projects · Systems</span>
+        </div>
+      </div>
+    </header>
+
+    <article class="reveal delay-1">
+      <div class="content">
+        <p class="lede">
+          I built this site to be simple, fast, and quietly ambitious: a place for write-ups that are
+          useful now, and still readable a year from now.
+        </p>
+
+        <div class="callout">
+          <strong>What this site is:</strong> practical notes, polished lessons, and a growing archive of things I’ve built.
+          <br />
+          <strong>What it isn’t:</strong> a feed. No doomscroll. Just good pages.
+        </div>
+
+        <h2>What you’ll find here</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Articles</h3>
+            <p>Short, high-signal write-ups: how something works, what I learned, and what I’d do differently.</p>
+          </div>
+          <div class="card">
+            <h3>Projects</h3>
+            <p>Build logs for A/V, IT, maker stuff, and whatever new tool I’m obsessed with this month.</p>
+          </div>
+          <div class="card">
+            <h3>Experiments</h3>
+            <p>Little tests, comparisons, and prototypes that don’t deserve a full “project,” but are still worth saving.</p>
+          </div>
+          <div class="card">
+            <h3>Notes</h3>
+            <p>A living notebook: the small details that future-me will thank present-me for writing down.</p>
+          </div>
+        </div>
+
+        <h2>Where it’s going</h2>
+        <p>
+          The north star is a library: pages that load instantly, look great, and age well.
+          Over time I’ll add richer media — diagrams, photos, and maybe a few tasteful animations —
+          but I’m keeping the content first.
+        </p>
+
+        <figure class="reveal delay-2">
+          <!-- Replace this with a real image later:
+               <img src="../assets/images/whatever.jpg" alt="..." loading="lazy" />
+          -->
+          <div class="img-placeholder">
+            <div>
+              <div style="font-weight:600; margin-bottom:6px;">Image placeholder</div>
+              <div style="max-width:58ch;">
+                Drop an image here later (build photo, diagram, hero shot). This component is ready for a real
+                <code>&lt;img&gt;</code> tag.
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            This spot is intentionally reserved for visuals: photos, diagrams, or motion (subtle only).
+          </figcaption>
+        </figure>
+
+        <h2>A note on craft</h2>
+        <p>
+          I’m aiming for “small and intentional.” If I add animation, it’ll serve the story — and it’ll respect your
+          system settings (so if you prefer reduced motion, the site will too).
+        </p>
+
+        <p>
+          If you’re reading this: thanks. This is the first brick in the wall.
+        </p>
+      </div>
+    </article>
+
+    <footer>
+      <div>
+        © <span id="year"></span> itsclay.net
+        <span aria-hidden="true">·</span>
+        <a href="../index.html">Back to home</a>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="../index.html#featured-articles-title">Explore articles</a>
+        <a class="btn" href="mailto:hello@itsclay.net">Say hi</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Tiny enhancement: update year, and optionally add a subtle "parallax" sheen offset on pointer move.
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!prefersReduced) {
+      const hero = document.querySelector(".hero");
+      const sheen = document.querySelector(".sheen");
+      if (hero && sheen) {
+        hero.addEventListener("pointermove", (e) => {
+          const r = hero.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width) - 0.5;   // -0.5..0.5
+          const y = ((e.clientY - r.top) / r.height) - 0.5;  // -0.5..0.5
+          sheen.style.transform = `translateX(${(x * 18) - 40}%) translateY(${y * 10}%) rotate(8deg)`;
+        });
+      }
+    }
+  </script>
+</body>
+</html>
