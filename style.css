@@ -1,142 +1,247 @@
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #111;
-  color: #f4f4f4;
-  line-height: 1.6;
-  padding: 2rem;
-}
-
-main {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 5vh;
-}
-
-h1 {
-  font-size: clamp(2rem, 8vw, 3rem);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-  color: #bbb;
-}
-
-h2 {
-  font-size: clamp(1rem, 4vw, 2rem);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 0.5rem;
-}
-
-ul.links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-ul.links li {
-  margin: 0.5rem 0;
-}
-
-ul.links a {
-  text-decoration: none;
-  color: #f4f4f4;
-  border-bottom: 1px solid #555;
-  transition: border-color 0.2s;
-}
-
-ul.links a:hover {
-  border-color: #f4f4f4;
-}
-
-/* Social section improvements */
-.social-section {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.social-section h2 {
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  color: #aaa;
-  letter-spacing: 0.03em;
-  font-style: italic;
-  text-transform: uppercase;
-}
-
-ul.socials {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 400px;
-  justify-content: center;
-  align-items: stretch;
-}
-
-ul.socials li {
-  width: 100%;
-}
-
-ul.socials li a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.35rem 0.6rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-  color: #111;
-  height: 100%;              /* makes all buttons the same height */
-  width: 100%;               /* fills each grid cell */
-  text-align: center;
-}
-
-ul.socials li a:hover {
-  transform: translateY(-1px);
-  filter: brightness(0.95);
-}
-
-/* Platform-specific colors (updated to accurate, softer tones) */
-.email {
-  background-color: #f4f4f4;
-  color: #111;
-}
-
-.github {
-  background-color: #e6e6e6;
-  color: #111;
-}
-
-.linkedin {
-  background-color: #c2e0f6;  /* bright, soft LinkedIn blue */
-  color: #111;
-}
-
-.instagram {
-  background-color: #e8d4c3;
-  color: #111;
-}
-
-.youtube {
-  background-color: #f8bcbc;
-  color: #111;
-}
-
-.workouts {
-  background-color: #f5e4c3;
-  color: #111;
-}
+diff --git a/style.css b/style.css
+index ba533fe001021d95c47fd4d5d50a39074518588f..336fdbff5990c4c4b7e07545538be4d7097d7fd9 100644
+--- a/style.css
++++ b/style.css
+@@ -14,129 +14,228 @@ main {
+   padding-top: 5vh;
+ }
+ 
+ h1 {
+   font-size: clamp(2rem, 8vw, 3rem);
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin-bottom: 0.5rem;
+ }
+ 
+ p {
+   font-size: 1.125rem;
+   margin-bottom: 2rem;
+   color: #bbb;
+ }
+ 
+ h2 {
+   font-size: clamp(1rem, 4vw, 2rem);
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin-bottom: 0.5rem;
+ }
+ 
+-ul.links {
++/* Articles section */
++.articles-section {
++  margin: 3rem 0;
++  text-align: left;
++}
++
++.articles-section h2 {
++  font-size: 1.25rem;
++  margin-bottom: 1rem;
++  color: #e8e8e8;
++  text-transform: uppercase;
++  letter-spacing: 0.05em;
++}
++
++.featured-card {
++  border: 1px solid #2f2f2f;
++  border-radius: 10px;
++  background: linear-gradient(160deg, #1a1a1a, #141414);
++  padding: 1.25rem;
++}
++
++.article-kicker {
++  font-size: 0.78rem;
++  text-transform: uppercase;
++  letter-spacing: 0.08em;
++  color: #9ac6f7;
++  margin-bottom: 0.4rem;
++}
++
++.featured-card h3 {
++  margin: 0 0 0.5rem 0;
++  font-size: 1.35rem;
++  color: #f8f8f8;
++}
++
++.featured-card p {
++  margin: 0 0 1rem 0;
++  color: #c5c5c5;
++  font-size: 0.96rem;
++}
++
++.article-link {
++  display: inline-block;
++  text-decoration: none;
++  border: 1px solid #3a3a3a;
++  padding: 0.4rem 0.75rem;
++  border-radius: 6px;
++  color: #f4f4f4;
++  font-size: 0.9rem;
++  transition: border-color 0.2s ease, transform 0.1s ease;
++}
++
++.article-link:hover {
++  border-color: #8abef3;
++  transform: translateY(-1px);
++}
++
++.carousel-controls {
++  margin-top: 0.75rem;
++  display: flex;
++  gap: 0.5rem;
++}
++
++.carousel-controls button {
++  background-color: #1b1b1b;
++  color: #e7e7e7;
++  border: 1px solid #313131;
++  border-radius: 6px;
++  padding: 0.4rem 0.7rem;
++  cursor: pointer;
++  font-size: 0.85rem;
++}
++
++.carousel-controls button:hover {
++  border-color: #8abef3;
++}
++
++.all-articles-title {
++  margin: 1.5rem 0 0.6rem;
++  font-size: 1rem;
++  color: #d7d7d7;
++  text-transform: uppercase;
++  letter-spacing: 0.05em;
++}
++
++.articles-list {
+   list-style: none;
+   padding: 0;
+   margin: 0;
++  display: grid;
++  gap: 0.6rem;
+ }
+ 
+-ul.links li {
+-  margin: 0.5rem 0;
++.articles-list li {
++  border: 1px solid #262626;
++  border-radius: 8px;
++  padding: 0.8rem;
++  background-color: #151515;
+ }
+ 
+-ul.links a {
+-  text-decoration: none;
++.articles-list a {
+   color: #f4f4f4;
+-  border-bottom: 1px solid #555;
+-  transition: border-color 0.2s;
++  text-decoration: none;
++  font-weight: 500;
+ }
+ 
+-ul.links a:hover {
+-  border-color: #f4f4f4;
++.article-meta {
++  margin: 0.2rem 0 0;
++  color: #aaaaaa;
++  font-size: 0.84rem;
+ }
+ 
+-/* Social section improvements */
+ .social-section {
+   margin-top: 2rem;
+   text-align: center;
+ }
+ 
+ .social-section h2 {
+   font-size: 0.9rem;
+   font-weight: 500;
+   margin-bottom: 1rem;
+   color: #aaa;
+   letter-spacing: 0.03em;
+   font-style: italic;
+   text-transform: uppercase;
+ }
+ 
+ ul.socials {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+   gap: 0.5rem;
+   list-style: none;
+   padding: 0;
+   margin: 0 auto;
+   max-width: 400px;
+   justify-content: center;
+   align-items: stretch;
+ }
+ 
+ ul.socials li {
+   width: 100%;
+ }
+ 
+ ul.socials li a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0.35rem 0.6rem;
+   font-size: 0.75rem;
+   font-weight: 500;
+   text-decoration: none;
+   border-radius: 4px;
+   transition: background-color 0.2s ease, transform 0.1s ease;
+   color: #111;
+-  height: 100%;              /* makes all buttons the same height */
+-  width: 100%;               /* fills each grid cell */
++  height: 100%;
++  width: 100%;
+   text-align: center;
+ }
+ 
+ ul.socials li a:hover {
+   transform: translateY(-1px);
+   filter: brightness(0.95);
+ }
+ 
+-/* Platform-specific colors (updated to accurate, softer tones) */
+ .email {
+   background-color: #f4f4f4;
+   color: #111;
+ }
+ 
+ .github {
+   background-color: #e6e6e6;
+   color: #111;
+ }
+ 
+ .linkedin {
+-  background-color: #c2e0f6;  /* bright, soft LinkedIn blue */
++  background-color: #c2e0f6;
+   color: #111;
+ }
+ 
+ .instagram {
+   background-color: #e8d4c3;
+   color: #111;
+ }
+ 
+ .youtube {
+   background-color: #f8bcbc;
+   color: #111;
+ }
+ 
+ .workouts {
+   background-color: #f5e4c3;
+   color: #111;
+ }
++
++@media (max-width: 640px) {
++  body {
++    padding: 1.2rem;
++  }
++
++  .carousel-controls {
++    flex-wrap: wrap;
++  }
++}
