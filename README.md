@@ -1,9 +1,7 @@
  # my-website
 -Website code to be hosted on itsClay.net
 +
-+Website code to be hosted on itsClay.net.
-+
-+## Articles workflow (static option)
++## Articles workflow
 +
 +1. Create a new HTML file in `articles/` (you can copy an existing article as a starter).
 +2. Add a new object in `scripts/articles.js` with:
